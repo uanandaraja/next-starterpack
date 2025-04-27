@@ -1,9 +1,9 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import { api } from '@/app/server/api'
+import { auth } from '@/lib/auth'
 
-const app = new Hono().basePath('/api')
-app.route('/v1', api)
+const app = new Hono()
+app.on(["POST", "GET"], "api/auth/**", (c) => auth.handler(c.req.raw));
 
 export const GET = handle(app)
 export const POST = handle(app)
