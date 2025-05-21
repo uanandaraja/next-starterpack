@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Header } from "./component/landing/header";
-import { Hero } from "./component/landing/hero";
-import { Footer } from "./component/landing/footer";
-import { Stack } from "./component/landing/stack";
+import { Header } from "../components/landing/header";
+import { Hero } from "../components/landing/hero";
+import { Footer } from "../components/landing/footer";
+import { Stack } from "../components/landing/stack";
 
 export default function Home() {
   return (
