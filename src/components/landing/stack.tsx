@@ -43,8 +43,9 @@ export function Stack() {
   return (
     <section className="pb-32">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-xl font-semibold text-center mb-12">Built on top of these technologies</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center items-center">
+        <h2 className="text-xl font-semibold text-center mb-2">Built on top of these technologies</h2>
+        <p className="text-gray-600 text-center mb-12">Because it's the easiest way I guess.</p>
+        <div className="grid grid-cols-6 gap-4 md:gap-8 justify-items-center items-center">
           {logos.map((logo) => (
             <div key={logo.name} className="flex items-center justify-center">
               <Image
@@ -52,7 +53,7 @@ export function Stack() {
                 alt={`${logo.name} logo`}
                 width={logo.width}
                 height={logo.height}
-                className="h-12 w-auto object-contain"
+                className="h-6 sm:h-8 md:h-12 w-auto object-contain"
               />
             </div>
           ))}

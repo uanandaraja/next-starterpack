@@ -5,13 +5,13 @@ export function Hero() {
     <main className="flex-1 flex flex-col items-center justify-center text-center px-8 md:px-16 max-w-6xl mx-auto">
       <div className="space-y-4">
         <div className="space-y-4 flex flex-col items-center justify-center">
-          <h1 className="text-2xl md:text-4xl font-semibold text-gray-900 text-center">
-            I'm tired of building the same thing over and over again
+          <h1 className="text-2xl md:text-4xl font-semibold text-gray-900 text-center max-w-3xl">
+            Yes, I'm tired of never finishing my projects
           </h1>
 
-          <p className="text-sm md:text-xl text-gray-600 max-w-2xl text-center">
+          <p className="text-sm md:text-xl text-gray-600 max-w-xl text-center">
             You have an idea. You want to build it. You ended up spending 3
-            hours doing auth, AGAIN and again. I don't want to do that any more.
+            hours doing auth, AGAIN and again. Don't do that.
           </p>
         </div>
         <div className="flex flex-row flex-nowrap justify-center gap-4 pt-4">

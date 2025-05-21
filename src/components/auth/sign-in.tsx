@@ -44,8 +44,8 @@ export default function SignIn() {
         <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
           <div className="text-center mb-8">
             <LogIn className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h1 className="text-3xl font-bold tracking-tight">Welcome back</h1>
-            <p className="text-gray-500 mt-2">Sign in to access your account</p>
+            <h1 className="text-3xl font-bold tracking-tight">Welcome!</h1>
+            <p className="text-gray-500 mt-2">Sign in to try the auth flow</p>
           </div>
           
           {error && (
