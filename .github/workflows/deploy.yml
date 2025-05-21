@@ -3,7 +3,7 @@ name: Deploy to VPS
 on:
   push:
     branches:
-      - main  # or your default branch name
+      - main 
 
 jobs:
   deploy:
@@ -18,9 +18,21 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             git pull origin main
+            # Setup NVM
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
             nvm use
+            # Install Bun if not already installed
+            if ! command -v bun &> /dev/null; then
+              curl -fsSL https://bun.sh/install | bash
+            fi
+            # Add Bun to PATH
+            export BUN_INSTALL="$HOME/.bun"
+            export PATH="$BUN_INSTALL/bin:$PATH"
+            # Install dependencies and build
+            bun install
+            bun run build
+            # Use NVM's Node for PM2
             npm install -g pm2
-            pm2 reload ecosystem.config.js
+            pm2 restart ecosystem.config.js
